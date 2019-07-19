@@ -1,0 +1,82 @@
+---
+title: "Missing data management"
+author: "Eefje S. Poppelaars"
+date: "19 July 2019"
+output:
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(DT)
+library(knitr)
+source("MissingData_ForDashboard.R")
+```
+
+
+Rows {.tabset .tabset-fade data-height=750}
+-----------------------------------------------------------------------
+
+### Complete case analysis
+
+```{r CCA , fig.width = 3.6, fig.height = 3.4, dpi = 125}
+plot(f2_CCA)
+plot(f1_CCA)
+plot(f3_CCA)
+```
+
+### Mean imputation
+
+```{r MeanI, fig.width = 3.6, fig.height = 3.4, dpi = 125}
+plot(f2_MeanI)
+plot(f1_MeanI)
+plot(f3_MeanI)
+```
+
+### Regression imputation
+
+```{r RI, fig.width = 3.6, fig.height = 3.4, dpi = 125}
+plot(f2_RI)
+plot(f1_RI)
+plot(f3_RI)
+```
+
+### Stochastic regression imputation
+
+```{r SRI, fig.width = 3.6, fig.height = 3.4, dpi = 125}
+plot(f2_SRI)
+plot(f1_SRI)
+plot(f3_SRI)
+```
+
+### Multiple imputation
+
+```{r MI, fig.width = 3.6, fig.height = 3.4, dpi = 125}
+plot(f2_MI)
+plot(f1_MI)
+plot(f3_MI)
+```
+
+
+Rows {.tabset .tabset-fade data-height=250}
+-----------------------------------------------------------------------
+
+### Accuracy of means
+
+```{r Winner_mean }
+kable( {df_mean} )
+```
+
+### Accuracy of standard deviations
+
+```{r Winner_sd }
+kable( {df_sd} )
+```
+
+### Accuracy of correlations
+
+```{r Winner_corr }
+kable( {df_cor} )
+```
