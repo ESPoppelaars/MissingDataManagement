@@ -105,7 +105,7 @@ f2 <- ggplot(data, aes(weight)) +
   annotation_custom(grob) +                          # Add mean text
   annotation_custom(grob_orig)                       # Add original mean text
 ## Plot all subfigures simultaneously
-tiff(filename = "CompleteCases.tiff",
+png(filename = "CompleteCases.png",
      width = 2500,
      height = 1000,
      family = "serif",
@@ -184,7 +184,7 @@ f2 <- ggplot(data, aes(weight, colour = miss)) + # Use missingness indicator in 
   annotation_custom(grob) +                          # Add mean text
   annotation_custom(grob_orig)                       # Add original mean text
 ## Plot all subfigures simultaneously
-tiff(filename = "MeanImputation.tiff",
+png(filename = "MeanImputation.png",
      width = 2500,
      height = 1000,
      family = "serif",
@@ -291,7 +291,7 @@ f2 <- ggplot(data, aes(weight, colour = miss)) + # Use missingness indicator in 
   annotation_custom(grob) +                          # Add mean text
   annotation_custom(grob_orig)                       # Add original mean text
 ## Plot all subfigures simultaneously
-tiff(filename = "RegressionImputation.tiff",
+png(filename = "RegressionImputation.png",
      width = 2500,
      height = 1000,
      family = "serif",
@@ -386,7 +386,7 @@ f2 <- ggplot(data, aes(weight, colour = miss)) + # Use missingness indicator in 
   annotation_custom(grob) +                          # Add mean text
   annotation_custom(grob_orig)                       # Add original mean text
 ## Plot all subfigures simultaneously
-tiff(filename = "StochasticRegressionImputation.tiff",
+png(filename = "StochasticRegressionImputation.png",
      width = 2500,
      height = 1000,
      family = "serif",
@@ -493,7 +493,7 @@ f2 <- ggplot(data, aes(weight, colour = miss)) + # Use missingness indicator in 
   annotation_custom(grob) +                          # Add mean text
   annotation_custom(grob_orig)                       # Add original mean text
 ## Plot all subfigures simultaneously
-tiff(filename = "MultipleImputation.tiff",
+png(filename = "MultipleImputation.png",
      width = 2500,
      height = 1000,
      family = "serif",
@@ -571,3 +571,9 @@ c("The most accurate mean is: " = rownames(df_mean[-1, ])[which.min(abs(df_mean[
 
 # Remove unnecessary variables
 remove(corr, df_mean, df_sd, df_cor, i)
+
+
+
+# Remove necessary variables ----------------------------------------------
+
+remove(df, df_CCA, df_MeanI, df_MI, df_MI_imp, df_NA, df_RI, df_SRI)
